@@ -1,17 +1,20 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 <div class="maincontent">
     <nav class="nav justify-content-center navbar-fixed-top navbar-dark bg-dark">
 
         <div class="navbar-nav ml-auto">
-            <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
+            <app-quote-form  (addQuote)='addNewQuote($event)'></app-quote-form>
         </div>    
       
     </nav>
     <div class="quotes">
         <div class="quoteList">
             <div *ngFor="let quote of quotes;let i=index">
-                <h5 (click)='toggleDetails(i)'>{{quote.quote}}</h5>
+                <h5 (click)='toggleDetails(i)'>{{quote.quote}} </h5>
+                
         
                 <div *ngIf="quote.showQuoteDetails">
+                    <p><i class="far fa-thumbs-up    " (click)='upvoteFunc(i)'></i>  <i style="text-indent: 2em;" class="far fa-thumbs-down    "></i></p>
                     <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)'></app-quote-details>
 
                 </div>
