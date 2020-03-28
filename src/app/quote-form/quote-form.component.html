@@ -1,27 +1,50 @@
-<div>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-      Launch
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">sm</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg rounded-pill" data-toggle="modal" data-target="#modelId">
+  Add Quote
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add a Quote</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <form (ngSubmit)="onSubmit()" #form="ngForm">
+
                 <div class="modal-body">
-                    Body
+                
+                    <div class="form-group">
+                      <label for="">Name</label>
+                      <input type="text" name="userName" id="userName" class="form-control" placeholder="Please input your name..." required>
+                      
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="form-group">
+                              <label for="">Quote</label>
+                              <textarea class="form-control" name="quote" id="quote" rows="3" placeholder="Please input Quote" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                              <label for="">Author</label>
+                              <input type="text" name="author" id="author" class="form-control" placeholder="Please input authors name"required>
+                              
+                            </div>
+                        </div>
+                    </div>
+                
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success rounded-pill">ADD</button>
                 </div>
-            </div>
+            </form>
+            
         </div>
     </div>
 </div>
