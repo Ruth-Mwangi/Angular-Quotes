@@ -9,7 +9,9 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
 
-  quotes:Quote[]=[];
+  quotes:Quote[]=[
+    new Quote(1,new Date(2020,1,1),"Ruru","Ruru","Dont hate the player hate the game",20,60)
+  ];
 
   addNewQuote(quote){
     let quotesLength=this.quotes.length+1;

@@ -7,8 +7,7 @@ export class DatePassedPipe implements PipeTransform {
 
   transform(value: any): number {
     let today:any=new Date();
-    //let todayNoTime:any=new Date(today.getFullYear(),today.getMonth(),today.getDate())
-    alert(today);
+  
     var dateDifference=Math.abs(value-today);
     var dateSeconds=dateDifference*0.001;
     const seconds=86400;
