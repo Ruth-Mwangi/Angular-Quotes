@@ -6,7 +6,7 @@
     <p><small class="text-muted"> Author </small> {{quote.author}}</p>
     <p><small class="text-muted">Uploaded by </small> {{quote.userName}} {{quote.datePosted}} days ago</p>
     <p><small class="text-muted">Posted </small> {{quote.datePosted}} days ago</p>
-    <p> <span class="green">{{quote.upvote}} Upvotes</span> <span class="red">{{quote.downvote}} Downvotes</span></p>
+    <p> <span class="green">{{quote.upvote}} Upvotes</span> <span class="red" style="text-indent: 2em;">{{quote.downvote}} Downvotes</span></p>
     <hr>
 
     <button (click)='quoteDeletion(true)' class="btn btn-danger">Delete</button>
