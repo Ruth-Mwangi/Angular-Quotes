@@ -11,7 +11,7 @@ export class QuoteComponent implements OnInit {
 
   quotes:Quote[]=[];
 
-  addNewGoal(quote){
+  addNewQuote(quote){
     let quotesLength=this.quotes.length+1;
     let up=0;
     let down=0;
