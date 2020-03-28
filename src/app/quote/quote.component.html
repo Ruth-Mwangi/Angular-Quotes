@@ -9,8 +9,13 @@
     <div class="quotes">
         <div class="quoteList">
             <div *ngFor="let quote of quotes">
-                <h5>{{quote.quote}}</h5>
-                <app-quote-details [quote]='quote'></app-quote-details>
+                <h5 (click)='toggleDetails(i)'>{{quote.quote}}</h5>
+        
+                <div *ngIf="quote.showQuoteDetails">
+                    <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)'></app-quote-details>
+
+                </div>
+                
             </div>
         </div>
         <div class="popularQuote"></div>
