@@ -8,7 +8,7 @@
     </nav>
     <div class="quotes">
         <div class="quoteList">
-            <div *ngFor="let quote of quotes">
+            <div *ngFor="let quote of quotes;let i=index">
                 <h5 (click)='toggleDetails(i)'>{{quote.quote}}</h5>
         
                 <div *ngIf="quote.showQuoteDetails">

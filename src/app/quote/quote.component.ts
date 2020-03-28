@@ -20,7 +20,9 @@ export class QuoteComponent implements OnInit {
 
     this.quotes.push(quoteObj);
   }
-
+  toggleDetails(index){
+    this.quotes[index].showQuoteDetails=!this.quotes[index].showQuoteDetails
+  }
   constructor() { }
 
   ngOnInit(): void {
