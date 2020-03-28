@@ -12,6 +12,11 @@ export class QuoteFormComponent implements OnInit {
   @Output() addQuote= new EventEmitter<Quote>();
 
   onSubmit(){
+    var check=this.newQuote;
+    if(check.userName===""||check.quote===""||check.author===""){
+      alert("Please fill in all fields")
+      return false;
+    }
     this.addQuote.emit(this.newQuote);
   }
 
