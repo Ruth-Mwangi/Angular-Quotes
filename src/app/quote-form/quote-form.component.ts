@@ -14,13 +14,8 @@ export class QuoteFormComponent implements OnInit {
 
   onSubmit(form: NgForm){
     var check=this.newQuote;
-    if(check.userName===""||check.quote===""||check.author===""){
-      alert("Please fill in all fields")
-      return false;
-    }
+    
     this.addQuote.emit(this.newQuote);
-    alert("Added Successfuly")
-  
     form.resetForm(); 
   }
 
