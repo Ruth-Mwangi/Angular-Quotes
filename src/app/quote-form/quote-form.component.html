@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg rounded-pill" data-toggle="modal" data-target="#modelId">
+<button type="button" class="btn btn-primary btn-md rounded-pill" data-toggle="modal" data-target="#modelId">
   Add Quote
 </button>
 
@@ -19,20 +19,29 @@
                 
                     <div class="form-group">
                       <label for="">Name</label>
-                      <input type="text" name="userName" id="userName" class="form-control" placeholder="Please input your name..." required>
+                      <input type="text" name="userName" id="userName" class="form-control" placeholder="Please input your name..." required #userName='ngModel' [(ngModel)]="newQuote.userName">
+                      <div [hidden]="userName.value||userName.pristine" class="alert alert-danger">
+                          <p>Name is required</p>
+                      </div>
                       
                     </div>
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-8">
                             <div class="form-group">
                               <label for="">Quote</label>
-                              <textarea class="form-control" name="quote" id="quote" rows="3" placeholder="Please input Quote" required></textarea>
+                              <textarea class="form-control" name="quote" id="quote" rows="3" placeholder="Please input Quote" required #quote='ngModel' [(ngModel)]="newQuote.quote"></textarea>
+                              <div [hidden]="quote.value||quote.pristine" class="alert alert-danger">
+                                <p>Quote is required</p>
+                            </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                               <label for="">Author</label>
-                              <input type="text" name="author" id="author" class="form-control" placeholder="Please input authors name"required>
+                              <input type="text" name="author" id="author" class="form-control" placeholder="Please input authors name"required #author='ngModel' [(ngModel)]="newQuote.author">
+                              <div [hidden]="author.value||author.pristine" class="alert alert-danger">
+                                <p>Author is required</p>
+                            </div>
                               
                             </div>
                         </div>
