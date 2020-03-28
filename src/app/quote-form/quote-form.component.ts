@@ -19,6 +19,7 @@ export class QuoteFormComponent implements OnInit {
       return false;
     }
     this.addQuote.emit(this.newQuote);
+    alert("Added Successfuly")
   
     form.resetForm(); 
   }
