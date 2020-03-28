@@ -13,10 +13,8 @@ export class QuoteComponent implements OnInit {
 
   addNewQuote(quote){
     let quotesLength=this.quotes.length+1;
-    let up=0;
-    let down=0;
 
-    let quoteObj=new Quote(quotesLength,new Date,quote.userName,quote.author,quote.quote,up,down);
+    let quoteObj=new Quote(quotesLength,new Date,quote.userName,quote.author,quote.quote,0,0);
 
     this.quotes.push(quoteObj);
   }
@@ -33,7 +31,11 @@ export class QuoteComponent implements OnInit {
       }
     }
 
-
+  }
+  upvoteFunc(index){
+      var up=this.quotes[index].upvote+1;
+      this.quotes[index].upvote=up+1;
+    
   }
   constructor() { }
 
