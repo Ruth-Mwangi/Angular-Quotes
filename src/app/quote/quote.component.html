@@ -14,7 +14,7 @@
                 
         
                 <div *ngIf="quote.showQuoteDetails">
-                    <p><i class="far fa-thumbs-up    " (click)='upvoteFunc(i)'></i>  <i style="text-indent: 2em;" class="far fa-thumbs-down    "></i></p>
+                    <p><i class="far fa-thumbs-up    " (click)='upvoteFunc(i)'></i>  <i style="text-indent: 2em;" (click)='doenvoteFunc(i)' class="far fa-thumbs-down    "></i></p>
                     <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)'></app-quote-details>
 
                 </div>
