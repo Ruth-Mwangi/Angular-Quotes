@@ -8,21 +8,41 @@
       
     </nav>
     <div class="quotes">
-        <div class="quoteList">
-            <div *ngFor="let quote of quotes;let i=index">
-                <h5 (click)='toggleDetails(i)'>{{quote.quote}} </h5>
-                
-        
-                <div *ngIf="quote.showQuoteDetails">
-                    <p><i class="far fa-thumbs-up    " (click)='upvoteFunc(i)'></i>  <i style="text-indent: 2em;" (click)='downvoteFunc(i)' class="far fa-thumbs-down    "></i></p>
-                    <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)'></app-quote-details>
+        <div class="container">
 
+            <div class="card-columns">
+                <div class="card" *ngFor="let quote of quotes;let i=index">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title"(click)='toggleDetails(i)'><i class="fas  fa-quote-left    "></i> <br><br>{{quote.quote}}  </h5>
+                        <div class="card-text"*ngIf="quote.showQuoteDetails">
+                            <p><i class="far fa-thumbs-up    " (click)='upvoteFunc(i)'></i>  <i style="text-indent: 2em;" (click)='downvoteFunc(i)' class="far fa-thumbs-down    "></i></p>
+                            <app-quote-details [quote]='quote' (isDeleted)='deleteQuote($event,i)'></app-quote-details>
+        
+                        </div>
+                    </div>
                 </div>
                 
             </div>
+
+            
+            
         </div>
-        <div class="popularQuote"></div>
+
+        <div class="popularQuote" *ngFor="let popular of populars;let i=index">
+
+            <h4 > {{popular.quote}}</h4>
+
+        </div>
+        
+        
+
+        
+
+        
+       
     </div>
+
 
     
     
