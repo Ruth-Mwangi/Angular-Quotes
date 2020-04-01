@@ -1,7 +1,8 @@
 # Quotes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
-The project is a Quote application that allows one to:
+
+*The project is a Quote application that allows one to:*
 * See quotes
 * Like or Dislike Quotes
 * Delete Quotes
